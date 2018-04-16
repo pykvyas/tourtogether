@@ -1,0 +1,356 @@
+﻿;<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Tour2gether</title>
+    <%--<link href="css/bootstrap.min.css" rel="stylesheet" />--%>
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>--%>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <style>
+        .btn{
+            font-size:20px !important;
+        }
+        .mybtn{
+            color: #fff;
+background-color: #337ab7;
+border-color: #2e6da4;
+    height: 50px !important;
+    width: 175px !important;
+border-style:solid;
+        }
+        .navbar-default{
+            border-radius:0px !important;
+        }
+        .container-fluid{
+            height:80px !important;
+        }
+        /*.ui-dialog{
+        position: relative !important;
+        height: 65% !important;
+        width: 50% !important;
+        top: -500px !important;
+        left: 810px !important;
+        z-index: 101 !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        }*/
+
+
+        .tripLi {
+            padding: 30px;
+        }
+
+        .tablink {
+            font-size: 25px !important;
+        }
+
+        .nav-tabs > li {
+            background: silver !important;
+        }
+
+        a {
+            //color:white !important;
+        }
+
+        .subacor {
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-top: 3%;
+        }
+
+        body {
+            font-family: Montserrat !important;
+        }
+
+        .panel {
+            border-radius: 0px !important;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            font-size: 20px !important;
+        }
+
+        .successTick {
+            font-size: 40pt;
+            color: green;
+            border: 2px solid orange;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            border-radius: 0px !important;
+            position: relative;
+            /*background-color: #fefefe;*/
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 30%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            margin-top: 15%;
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .modal-header {
+            padding: 2px 16px;
+            /*background-color: #5cb85c;*/
+            color: white;
+        }
+
+        .modal-body {
+            padding: 40px 120px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .w3-bar-row-color {
+            background-color: white !important;
+            padding: 30px !important;
+        }
+
+        .button {
+            display: inline-block;
+            /*border-radius: 4px;*/
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+                .button span:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+            .button:hover span {
+                padding-right: 25px;
+            }
+
+                .button:hover span:after {
+                    opacity: 1;
+                    right: 0;
+                }
+
+        .searchlable-black {
+            color: #000 !important;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .searchlable {
+            color: white !important;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .my-tab-content {
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .contentbox {
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+            background: #fff;
+        }
+
+        body {
+            /*background:#eee;*/
+            background:url('../images/1.jpg');
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        .plansearchbox {
+            border: 1px solid white;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 300px;
+            margin-top: 5%;
+            background: white;
+        }
+
+        .container {
+            width: 70% !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            float: left !important;
+        }
+
+        .form-control {
+            border: 1px solid #d4d4d4 !important;
+            border-radius: 0px;
+            height: 50px !important;
+            font-size: 18px;
+        }
+
+        .btn {
+            border-radius: 0px !important;
+            height: 50px !important;
+            width: 175px !important;
+        }
+
+        footer {
+            background-color: #2d2d30;
+            color: #f5f5f5;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: auto; /* Height of the footer */
+        }
+
+            footer a {
+                color: #f5f5f5;
+            }
+
+                footer a:hover {
+                    color: #777;
+                    text-decoration: none;
+                }
+                .childcontent{
+                        margin-top: 20%;
+    background-color: white;
+    padding: 40px;
+}
+                }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-default" style="top: 0;position: fixed;width: 100%;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/weblogo.png" width="200" /> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="margin-top:15px !important;" >
+        <li class="searchlable"><a href="plan.aspx">Plan</a></li>
+        <li class="searchlable"><a href="savedrequests.aspx">Request</a></li>
+        <li class="searchlable"><a href="siginin.aspx">Sing Out</a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+        <div class="container">
+        <asp:ContentPlaceHolder id="ChildContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       </div>
+        <footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p> <a href="#" data-toggle="tooltip" title="Visit w3schools">Tour2gether</a></p> 
+</footer>
+    </form>
+</body>
+</html>
